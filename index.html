@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NVIDIA Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NVIDIA Fact</h1>
+        <p id="fact"></p>
+        <button id="newFactBtn">Show Another Fact</button>
+    </div>
+    <script>
+        const nvidiaFacts = [
+            {
+                "fact": "NVIDIA was founded in 1993.",
+                "founders": ["Jen-Hsun Huang", "Chris Malachowsky", "Curtis Priem"]
+            },
+            {
+                "fact": "NVIDIA is best known for its graphics processing units (GPUs).",
+                "notable_product": "GeForce"
+            },
+            {
+                "fact": "The company introduced the first GPU, the GeForce 256, in 1999.",
+                "significance": "It was the first chip to be called a GPU."
+            },
+            {
+                "fact": "NVIDIA's CUDA platform allows developers to use GPUs for general purpose processing.",
+                "year_introduced": 2006
+            },
+            {
+                "fact": "NVIDIA acquired Mellanox Technologies in 2019.",
+                "focus": "Data center and networking solutions"
+            },
+            {
+                "fact": "NVIDIA's RTX series introduced real-time ray tracing technology.",
+                "year_introduced": 2018
+            },
+            {
+                "fact": "The company has a strong presence in AI and deep learning.",
+                "notable_product": "NVIDIA DGX systems"
+            },
+            {
+                "fact": "NVIDIA's Omniverse platform is designed for collaborative 3D content creation.",
+                "year_introduced": 2020
+            },
+            {
+                "fact": "NVIDIA is also involved in autonomous vehicle technology.",
+                "product": "NVIDIA Drive"
+            },
+            {
+                "fact": "As of 2021, NVIDIA became one of the most valuable semiconductor companies in the world.",
+                "market_cap": "Over $500 billion"
+            }
+        ];
+
+        function showRandomFact() {
+            const randomIndex = Math.floor(Math.random() * nvidiaFacts.length);
+            const factElement = document.getElementById('fact');
+            factElement.textContent = nvidiaFacts[randomIndex].fact;
+        }
+
+        // Show a random fact on page load
+        showRandomFact();
+
+        // Add event listener to button
+        document.getElementById('newFactBtn').addEventListener('click', showRandomFact);
+    </script>
+</body>
+</html>
